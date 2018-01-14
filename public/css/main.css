@@ -1,0 +1,33 @@
+/* Credit to Aleksi Lassila */
+
+@import url("utilities.css");
+@import url("keyframes.css");
+@import url("menu.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+body {
+  min-width: 400px;
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-animation: fadein 2s ease-in-out 1s;
+          animation: fadein 2s ease-in-out 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.Data {
+  padding: 40px 2.5%;
+}
+
+.Data-Heading {
+  line-height: 35px;
+}
