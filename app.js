@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
-const io = require("socket.io")(server);
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const temperature = require("./temperatureSchema");
@@ -40,7 +39,6 @@ app.post("/post", function(req, res){
 
     var newTemperature = new temperature();
     newTemperature["temperature"] = req.body.temperature;
-    console.log(newTemperature)
     newTemperature.save(function(err){
         if(err){
             res.send(err)};

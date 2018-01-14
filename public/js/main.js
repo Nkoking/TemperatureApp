@@ -1,4 +1,5 @@
 //Credit to Aleksi Lassila
+
 class Navbar extends React.Component {
   render(){
     return(
@@ -28,7 +29,7 @@ class Chart extends React.Component {
     super();
     this.state = {temperature: "fetching..."};
   }
-  
+
   async componentWillMount() {
 
     var data = {
@@ -43,10 +44,9 @@ class Chart extends React.Component {
       data.x.push(element["date"]);
       data.y.push(element["temperature"]);
     });
-
-    console.log(data.y[data.y.length - 1]);
+    
     this.setState({temperature: data.y[data.y.length - 1]});
-    Plotly.newPlot("graphDiv", data)
+    Plotly.plot(graphDiv, [data])
 };
 
 render(){
